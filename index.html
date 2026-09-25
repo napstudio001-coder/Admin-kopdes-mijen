@@ -45,30 +45,42 @@
     <header class="bg-white shadow-md border-b border-slate-200 sticky top-0 z-50 no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo & Name -->
+                <!-- Logo Vector & Name -->
                 <div class="flex items-center space-x-3">
-                    <img src="https://lh3.googleusercontent.com/pw/AP1GczO_L-W6-cI4XgN9g7C
-                    " id="appLogo" alt="Logo Kopdes" class="h-14 w-auto object-contain">
+                    <div class="h-14 w-14 flex items-center justify-center p-1 bg-white rounded-lg border border-slate-100 shadow-sm">
+                        <!-- Embedded Standalone Logo Vector -->
+                        <svg viewBox="0 0 200 200" class="h-full w-full object-contain">
+                            <rect width="200" height="200" fill="#ffffff"/>
+                            <path d="M 40,110 L 85,75 L 85,25 L 90,25 L 90,70 L 90,25 L 115,35 L 90,45 L 90,70 L 170,110" stroke="#d97706" stroke-width="8" fill="none" stroke-linecap="round"/>
+                            <path d="M 20,100 L 85,45 L 175,105 L 175,140 L 25,140 Z" fill="#dc2626"/>
+                            <path d="M 40,105 L 85,60 L 160,110 L 160,132 L 40,132 Z" fill="#ffffff"/>
+                            <path d="M 85,25 L 110,32 L 85,38 Z" fill="#dc2626"/>
+                            <text x="50" y="95" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="28" fill="#dc2626">KOP</text>
+                            <text x="50" y="122" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="28" fill="#dc2626">DES</text>
+                            <text x="45" y="136" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" fill="#1e293b">MERAH PUTIH</text>
+                            <text x="100" y="175" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="20" fill="#0f172a">DESA MIJEN</text>
+                        </svg>
+                    </div>
                     <div>
-                        <h1 class="text-lg sm:text-xl font-black text-red-600 tracking-tight leading-tight">
+                        <h1 class="text-base sm:text-xl font-black text-red-600 tracking-tight leading-tight">
                             KOPDES MERAH PUTIH
                         </h1>
-                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest">
+                        <p class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-widest">
                             DESA MIJEN • KEBONAGUNG • DEMAK
                         </p>
                     </div>
                 </div>
 
                 <!-- Admin Status & Auth -->
-                <div class="flex items-center space-x-3">
-                    <span id="badgeStatus" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <span id="badgeStatus" class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">
                         <i class="fa-solid fa-eye mr-1.5"></i> Mode Publik (Read-Only)
                     </span>
-                    <button id="btnLogin" onclick="openLoginModal()" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition flex items-center">
-                        <i class="fa-solid fa-lock mr-2"></i> Login Admin
+                    <button id="btnLogin" onclick="openLoginModal()" class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 rounded-lg shadow transition flex items-center">
+                        <i class="fa-solid fa-lock mr-1.5 sm:mr-2"></i> Login Admin
                     </button>
-                    <button id="btnLogout" onclick="logoutAdmin()" class="hidden bg-slate-700 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition flex items-center">
-                        <i class="fa-solid fa-right-from-bracket mr-2"></i> Keluar
+                    <button id="btnLogout" onclick="logoutAdmin()" class="hidden bg-slate-700 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 rounded-lg shadow transition flex items-center">
+                        <i class="fa-solid fa-right-from-bracket mr-1.5 sm:mr-2"></i> Keluar
                     </button>
                 </div>
             </div>
@@ -77,7 +89,7 @@
         <!-- Navigation Tabs -->
         <div class="bg-slate-900 text-white text-xs sm:text-sm font-medium">
             <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto space-x-2 sm:space-x-6">
-                <button onclick="switchTab('master')" id="tab-master" class="py-3 px-3 transition flex items-center border-b-2 border-transparent hover:text-red-400 whitespace-nowrap">
+                <button onclick="switchTab('master')" id="tab-master" class="py-3 px-3 transition flex items-center border-b-2 border-transparent hover:text-red-400 whitespace-nowrap tab-active">
                     <i class="fa-solid fa-id-card mr-2"></i> Cover / Master Data
                 </button>
                 <button onclick="switchTab('kas')" id="tab-kas" class="py-3 px-3 transition flex items-center border-b-2 border-transparent hover:text-red-400 whitespace-nowrap">
@@ -101,11 +113,25 @@
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-10 text-center relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-white to-red-600"></div>
                 
-                <img src="https://lh3.googleusercontent.com/pw/AP1GczO_L-W6-cI4XgN9g7C" alt="Logo Koperasi" class="h-32 mx-auto mb-4 object-contain">
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800 uppercase tracking-wide">
+                <!-- Embedded Big Logo -->
+                <div class="h-36 w-36 mx-auto mb-4">
+                    <svg viewBox="0 0 200 200" class="h-full w-full object-contain">
+                        <rect width="200" height="200" fill="#ffffff"/>
+                        <path d="M 40,110 L 85,75 L 85,25 L 90,25 L 90,70 L 90,25 L 115,35 L 90,45 L 90,70 L 170,110" stroke="#d97706" stroke-width="8" fill="none" stroke-linecap="round"/>
+                        <path d="M 20,100 L 85,45 L 175,105 L 175,140 L 25,140 Z" fill="#dc2626"/>
+                        <path d="M 40,105 L 85,60 L 160,110 L 160,132 L 40,132 Z" fill="#ffffff"/>
+                        <path d="M 85,25 L 110,32 L 85,38 Z" fill="#dc2626"/>
+                        <text x="50" y="95" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="28" fill="#dc2626">KOP</text>
+                        <text x="50" y="122" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="28" fill="#dc2626">DES</text>
+                        <text x="45" y="136" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" fill="#1e293b">MERAH PUTIH</text>
+                        <text x="100" y="175" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="20" fill="#0f172a">DESA MIJEN</text>
+                    </svg>
+                </div>
+
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-800 uppercase tracking-wide">
                     LAPORAN KEUANGAN KOPERASI DESA MERAH PUTIH
                 </h2>
-                <p class="text-lg font-bold text-red-600 mt-1">DESA MIJEN KECAMATAN KEBONAGUNG KABUPATEN DEMAK</p>
+                <p class="text-base sm:text-lg font-bold text-red-600 mt-1">DESA MIJEN KECAMATAN KEBONAGUNG KABUPATEN DEMAK</p>
                 <p class="text-sm text-slate-500 font-medium mt-1">Tahun Anggaran: <span id="displayTahun" class="font-bold text-slate-700">2026</span></p>
 
                 <hr class="my-8 border-slate-200">
@@ -194,13 +220,11 @@
                             <th rowspan="2" class="w-16 admin-col hidden no-print">AKSI</th>
                         </tr>
                         <tr>
-                            <!-- Pemasukan -->
                             <th class="bg-emerald-50">Setoran Pinjaman</th>
                             <th class="bg-emerald-50">Perdagangan</th>
                             <th class="bg-emerald-50">Simpanan Pokok</th>
                             <th class="bg-emerald-50">Simpanan Wajib</th>
                             <th class="bg-emerald-50">Lainnya</th>
-                            <!-- Pengeluaran -->
                             <th class="bg-red-50">Setor ke Bank</th>
                             <th class="bg-red-50">ATK</th>
                             <th class="bg-red-50">Perdagangan</th>
@@ -299,7 +323,7 @@
                 </button>
             </form>
             <div class="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-500">
-                <p class="font-bold text-slate-700 mb-1">Kredensial Default:</p>
+                <p class="font-bold text-slate-700 mb-1">Kredensial Login:</p>
                 <p>Email: <code class="text-red-600 font-bold">admin@kopdesmijen.id</code></p>
                 <p>Password: <code class="text-red-600 font-bold">AdminMijen2026!</code></p>
             </div>
@@ -334,13 +358,12 @@
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Kategori Kolom Excel</label>
                     <select id="inputKategori" class="w-full p-2.5 rounded border border-slate-300 text-sm">
-                        <!-- Populated dynamically -->
                     </select>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Uraian / Keterangan</label>
-                    <input type="text" id="inputUraian" required placeholder="Misal: Setoran simpanan anggota A.N Budi" class="w-full p-2.5 rounded border border-slate-300 text-sm">
+                    <input type="text" id="inputUraian" required placeholder="Misal: Setoran simpanan anggota" class="w-full p-2.5 rounded border border-slate-300 text-sm">
                 </div>
 
                 <div>
@@ -357,7 +380,6 @@
 
     <!-- SCRIPT APPLICATION LOGIC -->
     <script>
-        // App State
         let isAdmin = false;
         let masterData = {
             ketua: "Muhammad Shodiqin",
@@ -366,7 +388,6 @@
             tahun: "2026"
         };
 
-        // Initial Sample Kas Data
         let kasEntries = [
             { id: 1, tgl: '2026-01-02', bulan: 0, uraian: 'Simpanan Pokok Anggota Baru', jenis: 'masuk', kat: 'sim_pokok', nominal: 2000000 },
             { id: 2, tgl: '2026-01-05', bulan: 0, uraian: 'Setoran Pinjaman Unit Usaha', jenis: 'masuk', kat: 'setor_pinjam', nominal: 5760000 },
@@ -376,7 +397,6 @@
 
         let myChart = null;
 
-        // Initialize App
         document.addEventListener("DOMContentLoaded", () => {
             renderMasterData();
             renderKasTable();
@@ -385,7 +405,6 @@
             toggleCategorySelect();
         });
 
-        // Tab Switcher
         function switchTab(tabName) {
             ['master', 'kas', 'bulanan', 'tahunan'].forEach(t => {
                 document.getElementById(`view-${t}`).classList.add('hidden');
@@ -397,7 +416,6 @@
             if(tabName === 'tahunan') updateChart();
         }
 
-        // Auth Handlers
         function openLoginModal() { document.getElementById('modalLogin').classList.remove('hidden'); }
         function closeLoginModal() { document.getElementById('modalLogin').classList.add('hidden'); }
 
@@ -439,7 +457,7 @@
                 btnTambahKas.classList.remove('hidden');
                 adminCols.forEach(c => c.classList.remove('hidden'));
             } else {
-                badge.className = "inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300";
+                badge.className = "hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300";
                 badge.innerHTML = `<i class="fa-solid fa-eye mr-1.5"></i> Mode Publik (Read-Only)`;
                 btnLogin.classList.remove('hidden');
                 btnLogout.classList.add('hidden');
@@ -450,7 +468,6 @@
             renderKasTable();
         }
 
-        // Master Data Handlers
         function renderMasterData() {
             document.getElementById('dispKetua').innerText = masterData.ketua;
             document.getElementById('dispSekretaris').innerText = masterData.sekretaris;
@@ -465,7 +482,6 @@
             alert('Master Data berhasil diperbarui!');
         }
 
-        // Kas Handlers
         function toggleCategorySelect() {
             const jenis = document.getElementById('inputJenis').value;
             const katSelect = document.getElementById('inputKategori');
@@ -555,13 +571,11 @@
                     <td class="text-center">${i+1}</td>
                     <td>${e.tgl}</td>
                     <td class="font-medium">${e.uraian}</td>
-                    <!-- Pemasukan -->
                     <td class="text-right">${e.kat==='setor_pinjam'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='dagang_m'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='sim_pokok'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='sim_wajib'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='lain_m'? formatRp(e.nominal):'-'}</td>
-                    <!-- Pengeluaran -->
                     <td class="text-right">${e.kat==='bank'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='atk'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='dagang_k'? formatRp(e.nominal):'-'}</td>
@@ -570,7 +584,6 @@
                     <td class="text-right">${e.kat==='makan'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='transport'? formatRp(e.nominal):'-'}</td>
                     <td class="text-right">${e.kat==='ops'? formatRp(e.nominal):'-'}</td>
-                    <!-- Saldo -->
                     <td class="text-right font-bold bg-slate-50">${formatRp(runningSaldo)}</td>
                     ${isAdmin ? `<td class="text-center admin-col no-print"><button onclick="deleteEntry(${e.id})" class="text-red-600 hover:text-red-800"><i class="fa-solid fa-trash"></i></button></td>` : ''}
                 `;
@@ -599,7 +612,6 @@
             `;
         }
 
-        // Rekap Bulanan Handlers
         const bulanNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
         function renderRekapBulanan() {
@@ -637,7 +649,6 @@
             document.getElementById('saldoAkhirThn').innerText = formatRp(accumSaldo);
         }
 
-        // Chart.js Integration
         function initChart() {
             const ctx = document.getElementById('financialChart').getContext('2d');
             myChart = new Chart(ctx, {

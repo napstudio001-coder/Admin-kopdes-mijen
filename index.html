@@ -379,6 +379,38 @@
     </div>
 
     <!-- SCRIPT APPLICATION LOGIC -->
+<!-- Import Firebase SDK via CDN (Modular JS) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { 
+    getFirestore, 
+    collection, 
+    addDoc, 
+    getDocs, 
+    onSnapshot 
+  } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  // 1. Masukkan Konfigurasi Firebase dari Layar Anda
+  const firebaseConfig = {
+    apiKey: "AIzaSyBa-6I-ZKepmoqGYJxg9...",
+    authDomain: "kopdes-mijen.firebaseapp.com",
+    projectId: "kopdes-mijen",
+    storageBucket: "kopdes-mijen.firebasestorage.app",
+    messagingSenderId: "546733337777",
+    appId: "1:546733337777:web:8463e7e...",
+    measurementId: "G-FHVZD1NZT3"
+  };
+
+  // 2. Inisialisasi Firebase & Firestore Database
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Expose db secara global jika script Anda terpisah di JS lain
+  window.db = db;
+  window.firestoreTools = { collection, addDoc, getDocs, onSnapshot };
+
+  console.log("Firebase Firestore KOPDES MIJEN Berhasil Terhubung!");
+</script>
     <script>
         let isAdmin = false;
         let masterData = {
